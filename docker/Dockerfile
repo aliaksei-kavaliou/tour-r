@@ -14,8 +14,11 @@ ENV APP_ENV='dev' \
     AWS_SECRET=fake \
     AWS_SQS_ENDPOINT=fake \
     AWS_REGION=fake \
-    TOUR_STORAGE_S3_BUCKET=fake \
-    IMPORTER_SQS_QUEUE=fake
+    TOUR_STORAGE_S3_BUCKET=fake
+
+RUN pecl install -o -f redis \
+&&  rm -rf /tmp/pear \
+&&  docker-php-ext-enable redis
 
 #Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer

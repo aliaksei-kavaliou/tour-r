@@ -4,7 +4,6 @@ namespace App\Command;
 
 use Aws\Exception\AwsException;
 use Aws\S3\S3Client;
-use Aws\Sqs\SqsClient;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -17,23 +16,18 @@ class AwsInitCommand extends Command
     /** @var S3Client */
     private $s3Client;
 
-    /** @var SqsClient */
-    private $sqsClient;
-
-    /** @var string  */
+    /** @var string */
     private $kernelEnvironment;
 
     /**
      * AwsInitCommand constructor.
      *
-     * @param S3Client  $s3Client
-     * @param SqsClient $sqsClient
-     * @param string    $kernelEnvironment
+     * @param S3Client $s3Client
+     * @param string   $kernelEnvironment
      */
-    public function __construct(S3Client $s3Client, SqsClient $sqsClient, string $kernelEnvironment)
+    public function __construct(S3Client $s3Client, string $kernelEnvironment)
     {
         $this->s3Client = $s3Client;
-        $this->sqsClient = $sqsClient;
         $this->kernelEnvironment = $kernelEnvironment;
 
         parent::__construct();
@@ -42,7 +36,7 @@ class AwsInitCommand extends Command
 
     protected function configure()
     {
-        $this->setDescription('init aws sqs and s3 infrastructures');
+        $this->setDescription('init aws s3 infrastructures');
     }
 
 
@@ -60,12 +54,6 @@ class AwsInitCommand extends Command
         $withErrors = false;
 
         foreach (\getenv() as $key => $value) {
-            if (false !== \strpos($key, 'SQS_QUEUE')) {
-                $withErrors |= !$this->createQueue($value, $io);
-
-                continue;
-            }
-
             if (false !== \strpos($key, 'S3_BUCKET')) {
                 $withErrors |= !$this->createBucket($value, $io);
             }
@@ -78,27 +66,6 @@ class AwsInitCommand extends Command
         $io->text("Infrastructure created. Bye!\n");
 
         return 0;
-    }
-
-    /**
-     * @param string       $value
-     * @param SymfonyStyle $io
-     *
-     * @return bool
-     */
-    private function createQueue(string $value, SymfonyStyle $io): bool
-    {
-        try {
-            $result = $this->sqsClient->createQueue(['QueueName' => $value]);
-            $io->success($value . ' queue created.');
-            $io->success('QueueUrl: ' . $result->get('QueueUrl'));
-        } catch (AwsException $e) {
-            $io->error($e->getAwsErrorMessage());
-
-            return false;
-        }
-
-        return true;
     }
 
     /**

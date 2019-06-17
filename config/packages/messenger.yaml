@@ -2,9 +2,9 @@ framework:
     messenger:
         transports:
             async:
-                dsn: enqueue://sqs?receiveTimeout=6000&queue[name]=%env(resolve:IMPORTER_SQS_QUEUE)%&topic[name]=%env(resolve:IMPORTER_SQS_QUEUE)%
+                dsn: '%env(MESSENGER_TRANSPORT_DSN)%'
                 retry_strategy:
-                    max_retries: 0
+                    max_retries: 2
 
         routing:
             'App\Message\ImportMessage': async

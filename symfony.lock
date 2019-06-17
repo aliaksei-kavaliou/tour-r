@@ -11,8 +11,38 @@
             "ref": "d1753f9e2a669c464b2b0618af9b0123426b67b4"
         }
     },
+    "doctrine/annotations": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "cb4152ebcadbe620ea2261da1a1c5a9b8cea7672"
+        },
+        "files": [
+            "config/routes/annotations.yaml"
+        ]
+    },
+    "doctrine/cache": {
+        "version": "v1.8.0"
+    },
+    "doctrine/collections": {
+        "version": "v1.6.2"
+    },
+    "doctrine/event-manager": {
+        "version": "v1.0.0"
+    },
     "doctrine/inflector": {
         "version": "v1.3.0"
+    },
+    "doctrine/lexer": {
+        "version": "1.0.2"
+    },
+    "doctrine/persistence": {
+        "version": "1.1.1"
+    },
+    "doctrine/reflection": {
+        "version": "v1.0.0"
     },
     "enqueue/amqp-tools": {
         "version": "0.9.8"
@@ -30,6 +60,15 @@
             "branch": "master",
             "version": "0.9",
             "ref": "a025d0d707c6a7fefb8903f1c9844700dc69ee9d"
+        }
+    },
+    "enqueue/messenger-adapter": {
+        "version": "0.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "0.1",
+            "ref": "9a7119f609b576a30dbf03e4fe44212388e96ea1"
         }
     },
     "enqueue/null": {
@@ -59,6 +98,15 @@
     "nikic/php-parser": {
         "version": "v4.2.2"
     },
+    "phpdocumentor/reflection-common": {
+        "version": "1.0.1"
+    },
+    "phpdocumentor/reflection-docblock": {
+        "version": "4.3.1"
+    },
+    "phpdocumentor/type-resolver": {
+        "version": "0.4.0"
+    },
     "psr/cache": {
         "version": "1.0.1"
     },
@@ -82,6 +130,18 @@
     },
     "ramsey/uuid": {
         "version": "3.8.0"
+    },
+    "sensio/framework-extra-bundle": {
+        "version": "5.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "5.2",
+            "ref": "fb7e19da7f013d0d422fa9bce16f5c510e27609b"
+        },
+        "files": [
+            "config/packages/sensio_framework_extra.yaml"
+        ]
     },
     "sroze/messenger-enqueue-transport": {
         "version": "0.3.0"
@@ -166,6 +226,9 @@
     "symfony/http-kernel": {
         "version": "v4.3.1"
     },
+    "symfony/inflector": {
+        "version": "v4.3.1"
+    },
     "symfony/maker-bundle": {
         "version": "1.0",
         "recipe": {
@@ -221,6 +284,12 @@
     "symfony/polyfill-php73": {
         "version": "v1.11.0"
     },
+    "symfony/property-access": {
+        "version": "v4.3.1"
+    },
+    "symfony/property-info": {
+        "version": "v4.3.1"
+    },
     "symfony/routing": {
         "version": "4.2",
         "recipe": {
@@ -238,6 +307,9 @@
     },
     "symfony/serializer": {
         "version": "v4.3.1"
+    },
+    "symfony/serializer-pack": {
+        "version": "v1.0.2"
     },
     "symfony/service-contracts": {
         "version": "v1.1.2"
@@ -263,5 +335,8 @@
     },
     "symfony/yaml": {
         "version": "v4.3.1"
+    },
+    "webmozart/assert": {
+        "version": "1.4.0"
     }
 }

@@ -1,4 +1,4 @@
 framework:
     messenger:
         transports:
-            async: 'enqueue://sqs'
+            async: 'in-memory:///'
