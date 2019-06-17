@@ -14,7 +14,7 @@ ENV APP_ENV='dev' \
     AWS_SECRET=fake \
     AWS_SQS_ENDPOINT=fake \
     AWS_REGION=fake \
-    AWS_S3_BUCKET=fake \
+    TOUR_STORAGE_S3_BUCKET=fake \
     IMPORTER_SQS_QUEUE=fake
 
 #Composer

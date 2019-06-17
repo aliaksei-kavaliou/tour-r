@@ -1,12 +1,10 @@
 framework:
     messenger:
-        serializer:
-            default_serializer: messenger.transport.symfony_serializer
-            symfony_serializer:
-                format: json
-                context: { }
         transports:
-            async: enqueue://sqs?receiveTimeout=1000&queue[name]=%env(resolve:IMPORTER_SQS_QUEUE)%&topic[name]=%env(resolve:IMPORTER_SQS_QUEUE)%
+            async:
+                dsn: enqueue://sqs?receiveTimeout=6000&queue[name]=%env(resolve:IMPORTER_SQS_QUEUE)%&topic[name]=%env(resolve:IMPORTER_SQS_QUEUE)%
+                retry_strategy:
+                    max_retries: 0
 
         routing:
             'App\Message\ImportMessage': async

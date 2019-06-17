@@ -48,3 +48,17 @@ services:
     App\Handler\:
         resource: '../src/Handler'
         tags: [messenger.message_handler]
+
+    App\Service\ClientProvider:
+        calls:
+        - method: addClient
+          arguments:
+              $operatorName: dummy
+              $client: '@App\Service\DummyClient'
+
+    App\Service\ParserProvider:
+        calls:
+        - method: addParser
+          arguments:
+              $operatorName: dummy
+              $parser: '@App\Service\DummyParser'
