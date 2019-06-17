@@ -29,7 +29,7 @@ RUN composer install --no-scripts
 
 COPY ./ /var/www/html
 RUN chown -R www-data:www-data /var/www/html
-
+RUN chmod -R 755 /var/www/html/bin
 RUN composer install
 
 CMD ["php-fpm", "-F"]
