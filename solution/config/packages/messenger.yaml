@@ -1,0 +1,10 @@
+framework:
+    messenger:
+        transports:
+            async:
+                dsn: '%env(MESSENGER_TRANSPORT_DSN)%'
+                retry_strategy:
+                    max_retries: 2
+
+        routing:
+            'App\Message\ImportMessage': async
