@@ -4,7 +4,7 @@ namespace App\Events;
 
 use Symfony\Contracts\EventDispatcher\Event;
 
-class ImportFailedEvent extends  Event
+class ImportFailedEvent extends Event
 {
     /** @var string */
     private $operatorName;

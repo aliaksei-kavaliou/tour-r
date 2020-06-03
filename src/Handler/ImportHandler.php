@@ -79,8 +79,7 @@ class ImportHandler
                     'Body' => $parsed,
                 ]
             );
-
-        }  catch (S3Exception $e) {
+        } catch (S3Exception $e) {
             $this->eventDispatcher->dispatch(new ImportFailedEvent($message->getOperatorName()));
 
             return;

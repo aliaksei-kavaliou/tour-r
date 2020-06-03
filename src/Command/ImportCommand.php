@@ -49,5 +49,4 @@ class ImportCommand extends Command
 
         $output->writeln("done");
     }
-
 }
