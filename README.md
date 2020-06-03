@@ -45,8 +45,8 @@ To start dev environment use
 
     $ docker-compose build && docker-compose up -d
     $ composer install
-    $ bin/console app:aws-init
-    
+    $ docker-compose exec app bin/console app:aws-init
+    $ docker-compose exec app bin/console app:import-tours dummy
     
 Test
 --

@@ -1,8 +1,8 @@
-FROM php:7.2-fpm-alpine
+FROM php:7.3-fpm-alpine
 
 RUN apk update \
-    && apk add  --no-cache bash git curl libmcrypt libmcrypt-dev openssh-client icu-dev \
-    libxml2-dev freetype-dev libpng-dev libjpeg-turbo-dev g++ make autoconf \
+    && apk add  --no-cache bash git curl libzip-dev libmcrypt libmcrypt-dev openssh-client icu-dev \
+    libxml2-dev freetype-dev libpng-dev libjpeg-turbo-dev g++ make autoconf\
     && docker-php-source extract \
     && docker-php-source delete \
     && docker-php-ext-install intl zip \
@@ -12,7 +12,6 @@ ENV APP_ENV='dev' \
     APP_DEBUG=1 \
     AWS_KEY=fake \
     AWS_SECRET=fake \
-    AWS_SQS_ENDPOINT=fake \
     AWS_REGION=fake \
     TOUR_STORAGE_S3_BUCKET=fake
 

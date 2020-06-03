@@ -30,15 +30,7 @@ services:
     Aws\S3\S3Client:
         arguments:
         -   endpoint: '%env(resolve:AWS_S3_ENDPOINT)%'
-            version: 'latest'
-            region: '%env(resolve:AWS_REGION)%'
-            credentials:
-                key: '%env(resolve:AWS_KEY)%'
-                secret: '%env(resolve:AWS_SECRET)%'
-
-    Aws\Sqs\SqsClient:
-        arguments:
-        -   endpoint: '%env(resolve:AWS_SQS_ENDPOINT)%'
+            use_path_style_endpoint: true
             version: 'latest'
             region: '%env(resolve:AWS_REGION)%'
             credentials:

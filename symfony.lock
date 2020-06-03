@@ -98,6 +98,9 @@
     "nikic/php-parser": {
         "version": "v4.2.2"
     },
+    "php": {
+        "version": "7.3"
+    },
     "phpdocumentor/reflection-common": {
         "version": "1.0.1"
     },
@@ -176,6 +179,9 @@
     },
     "symfony/dotenv": {
         "version": "v4.3.1"
+    },
+    "symfony/error-handler": {
+        "version": "v4.4.9"
     },
     "symfony/event-dispatcher": {
         "version": "v4.3.1"
@@ -284,6 +290,9 @@
     "symfony/polyfill-php73": {
         "version": "v1.11.0"
     },
+    "symfony/polyfill-php80": {
+        "version": "v1.17.0"
+    },
     "symfony/property-access": {
         "version": "v4.3.1"
     },
@@ -329,6 +338,9 @@
             "./config/packages/test/validator.yaml",
             "./config/packages/validator.yaml"
         ]
+    },
+    "symfony/var-dumper": {
+        "version": "v4.4.9"
     },
     "symfony/var-exporter": {
         "version": "v4.3.1"

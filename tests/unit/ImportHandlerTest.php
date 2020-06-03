@@ -12,8 +12,8 @@ use App\Service\ClientProvider;
 use App\Service\ParserProvider;
 use Aws\S3\Exception\S3Exception;
 use Aws\S3\S3Client;
+use PHPUnit\Framework\TestCase;
 use Prophecy\Argument;
-use Symfony\Bundle\FrameworkBundle\Tests\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 class ImportHandlerTest extends TestCase
